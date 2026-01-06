@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -21,5 +21,6 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Build & Test
+      - name: Build and test with Maven
         run: mvn -B test
+        working-directory: devops-app
